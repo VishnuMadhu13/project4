@@ -212,7 +212,7 @@ pipeline {
   }
 }
 
-// Non-zero scanner exit: warn by default, fail only when ENFORCE_GATES=true
+// Non-zero scanner exit: warn by default, fail only when ENFORCE_GATES=false
 def gate(int rc, String name) {
   if (rc != 0) {
     if (params.ENFORCE_GATES) {
