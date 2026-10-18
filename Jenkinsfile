@@ -20,7 +20,7 @@ pipeline {
 
   environment {
     // ---- EDIT THESE ----
-    APP_DIR           = 'project4'                        // folder that contains manage.py ('.' if at repo root)
+    APP_DIR           = '.'                        // folder that contains manage.py ('.' if at repo root)
     IMAGE_REPO        = 'vishnumadhu13/project4'    // Docker Hub repo
     GIT_REPO          = 'github.com/VishnuMadhu13project4.git'
     GIT_BRANCH        = 'main'
