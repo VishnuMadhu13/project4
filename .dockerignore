@@ -1,0 +1,15 @@
+.git
+.gitignore
+.venv
+venv
+__pycache__
+*.pyc
+*.sqlite3
+*.sql
+.env
+Jenkinsfile
+k8s
+*-report.json
+*-report.html
+.idea
+.vscode
