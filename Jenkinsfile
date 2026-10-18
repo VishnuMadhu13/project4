@@ -21,11 +21,11 @@ pipeline {
   environment {
     // ---- EDIT THESE ----
     APP_DIR           = 'project4'                        // folder that contains manage.py ('.' if at repo root)
-    IMAGE_REPO        = 'YOUR_DOCKERHUB_USER/project4'    // Docker Hub repo
-    GIT_REPO          = 'github.com/YOUR_GH_USER/project4.git'
+    IMAGE_REPO        = 'vishnumadhu13/project4'    // Docker Hub repo
+    GIT_REPO          = 'github.com/VishnuMadhu13project4.git'
     GIT_BRANCH        = 'main'
     JENKINS_CONTAINER = 'ubuntu-jenkins-1'
-    SONAR_HOST_URL    = 'http://sonarqube:9000'           // compose service name of SonarQube
+    SONAR_HOST_URL    = 'http://3.25.89.189:9000'           // compose service name of SonarQube
     // --------------------
     IMAGE_TAG         = "${BUILD_NUMBER}"
     DAST_NET          = "dast-net-${BUILD_NUMBER}"
@@ -166,7 +166,7 @@ pipeline {
     // ============ STEP 3: PUSH ============
     stage('Push Image') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds',
+        withCredentials([usernamePassword(credentialsId: 'docker-cred',
                                           usernameVariable: 'DH_USER', passwordVariable: 'DH_PASS')]) {
           sh '''
             echo "$DH_PASS" | docker login -u "$DH_USER" --password-stdin
@@ -181,11 +181,11 @@ pipeline {
     // ============ STEP 4: GITOPS (ArgoCD picks up this commit) ============
     stage('Update Manifest (GitOps)') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'github-creds',
+        withCredentials([usernamePassword(credentialsId: 'github-jenkins',
                                           usernameVariable: 'GIT_USER', passwordVariable: 'GIT_TOKEN')]) {
           sh '''
-            git config user.email "jenkins@ci.local"
-            git config user.name  "jenkins"
+            git config user.email "vishnumadhu04723@gmail.com"
+            git config user.name  "VishnuMadhu13"
             git checkout -B $GIT_BRANCH                      # leave detached HEAD
             sed -i "s|image: .*|image: $IMAGE_REPO:$IMAGE_TAG|" $APP_DIR/k8s/deployment.yaml
             git add $APP_DIR/k8s/deployment.yaml
