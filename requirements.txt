@@ -3,4 +3,5 @@ Django>=4.2,<5.0
 gunicorn>=22.0
 whitenoise>=6.6
 Pillow>=10.3
+PyMySQL>=1.1
 # mysqlclient>=2.2   # only if the app really uses MySQL (complaint_db.sql)
