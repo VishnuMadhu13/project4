@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: project4
-          image: vishnumadhu13/project4:9
+          image: vishnumadhu13/project4:10
           ports:
             - containerPort: 8000
           env:
