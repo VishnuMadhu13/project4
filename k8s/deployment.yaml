@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: project4
-          image: YOUR_DOCKERHUB_USER/project4:latest   # Jenkins rewrites this line
+          image: vishnumadhu13/project4:9
           ports:
             - containerPort: 8000
           env:
