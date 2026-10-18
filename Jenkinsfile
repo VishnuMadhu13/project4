@@ -22,7 +22,7 @@ pipeline {
     // ---- EDIT THESE ----
     APP_DIR           = '.'                        // folder that contains manage.py ('.' if at repo root)
     IMAGE_REPO        = 'vishnumadhu13/project4'    // Docker Hub repo
-    GIT_REPO          = 'github.com/VishnuMadhu13project4.git'
+    GIT_REPO          = 'github.com/VishnuMadhu13/project4.git'
     GIT_BRANCH        = 'main'
     JENKINS_CONTAINER = 'ubuntu-jenkins-1'
     SONAR_HOST_URL    = 'http://3.25.89.189:9000'           // compose service name of SonarQube
