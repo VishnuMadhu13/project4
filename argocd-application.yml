@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/VishnuMadhu13/project4.git
     targetRevision: main
-    path: project4/k8s
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: project4
